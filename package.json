@@ -1,0 +1,14 @@
+{
+	"name": "04-soloprojet",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"sass": "sass --watch styles/style.scss:styles/style.css"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"sass": "^1.74.1"
+	}
+}
