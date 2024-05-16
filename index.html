@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+		<!-- Link to css -->
+		<link rel="stylesheet" type="text/css" href="./styles/style.css" />
+		<!-- Font style -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Smythe&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Title -->
+		<title>Jimmy's Diner</title>
+	</head>
+
+	<body>
+		<header>
+			<div class="container">
+				<!-- <img src="./images/header.jpg" alt="burgerPic" /> -->
+				<div id="header_container">
+					<h1>Jimmy's Diner</h1>
+					<h2>The best burger and pizza in town</h2>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<div class="menu_container" id="menu_container"></div>
+
+			<div class="order_container" id="order_container">
+				<h1 id="order">Your order</h1>
+				<div class="meal_container" id="meal_container"></div>
+				<div class="total" id="total">
+					<p id="total_price">Total price:</p>
+					<p id="price"></p>
+				</div>
+				<button type="submit" id="order_btn">Complete order</button>
+			</div>
+
+			<div class="payment_container" id="payment_container">
+				<div class="form_container">
+					<button class="close-btn" id="close-btn">X</button>
+					<h2>Enter card details</h2>
+					<form id="payment_form" action="#">
+						<input
+							type="text"
+							name="fullName"
+							id="input-Field-Name"
+							placeholder="Enter your name"
+							required
+						/>
+						<input
+							type="text"
+							id="card-Number"
+							name="cardNumber"
+							placeholder="0000 0000 0000 0000"
+							maxlength="16"
+							pattern="[0-9]*"
+							required
+						/>
+						<input
+							type="text"
+							id="card-CVV"
+							name="cardCVV"
+							placeholder="Enter CVV"
+							maxlength="3"
+							pattern="[0-9]*"
+							required
+						/>
+						<button
+							type="submit"
+							id="payment-btn"
+							onclick="return false"
+						>
+							Pay
+						</button>
+					</form>
+				</div>
+			</div>
+
+			<div class="greeting_container" id="greeting_container"></div>
+		</main>
+
+		<!-- Link to JS -->
+		<script src="./scritps/script.js" type="module"></script>
+	</body>
+</html>
