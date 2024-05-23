@@ -13,6 +13,8 @@ const greetingContainer = document.getElementById("greeting_container");
 const inputFieldName = document.getElementById("input-Field-Name");
 const cardNumber = document.getElementById("card-Number");
 const cardCCV = document.getElementById("card-CVV");
+const discountContainer = document.getElementById("discount_countainer");
+const discountAmount = document.getElementById("discount_amount");
 
 let feedHtml = "";
 let choiceHtml = "";
@@ -55,21 +57,20 @@ document.querySelectorAll(".add-btn").forEach(function (item) {
 
 function getChoiceHtml() {
 	choiceHtml = "";
-	console.log(orderArray.length);
 	orderArray.forEach(function (orderItem) {
 		const mat = menuArray.find((item) => item.id === orderItem.id);
-		console.log(orderArray);
-		console.log(mat);
+		//console.log(mat);
 		if (mat) {
 			for (let i = 0; i < orderItem.counter; i++) {
-				console.log(mat.id);
 				choiceHtml += `
-                    <div class="meal">
-                        <p class="mealName">${mat.name}</p>
-                        <button id="${mat.id}" class="remove-btn">remove</button>
-                        <p>$${mat.price}</p>
-                    </div>
-                `;
+							<div class="meal">
+								<p class="mealName">${mat.name}</p>
+								<button id="${mat.id}" class="remove-btn">remove</button>
+								<p id="quantity-ordered">${orderItem.counter}</p>
+								<p>$${mat.price}</p>
+							</div>
+						`;
+				return choiceHtml;
 			}
 		}
 	});
@@ -118,6 +119,14 @@ function totalPrice(itemOfArray) {
 		}
 		sum += price;
 	});
+	if (sum > 50) {
+		discountContainer.style.display = "flex";
+		let discount = 0.1;
+		sum = (sum * (1 - discount)).toFixed(2);
+		console.log(discount);
+		discountAmount.innerHTML = "$" + (sum * discount).toFixed(2);
+		console.log(sum);
+	}
 	//console.log(sum);
 	return sum;
 }

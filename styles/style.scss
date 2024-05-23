@@ -102,7 +102,7 @@
 					justify-content: space-between;
 					align-items: center;
 					.mealName {
-						margin-right: -350px;
+						margin-right: -140px;
 					}
 					.remove-btn {
 						font-size: 12px;
@@ -111,8 +111,25 @@
 						background-color: transparent;
 						border: none;
 					}
+					#quantity-ordered {
+						font-size: 17px;
+						font-weight: bold;
+						color: white;
+						background-color: #16db99;
+						border-radius: 50%;
+						position: relative;
+						right: 130px;
+						padding: 5px;
+						width: 20px;
+						text-align: center;
+					}
 				}
 			}
+			.discount_countainer {
+				display: none;
+				justify-content: space-between;
+			}
+
 			.total {
 				margin-top: 20px;
 				display: flex;
